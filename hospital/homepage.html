@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="homepage.css">
+
+</head>
+<body>
+     <div class="container">
+        <nav>
+            <div class="logo">
+                <h1>Sanjeevani</h1>
+            </div>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="#service">Services</a></li>
+                <li><a href="#doctors">Doctors</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#appointment">Appointment</a></li>
+                <li><div id="user-section">
+                    <span id="user-greeting"></span>
+                    <a id="logout-button" style="display: none;" href="/logout">Logout</a>
+                    <a id="login-button" href="/login">Login</a>
+                </div>
+                </li>
+            </ul>
+            <i id="bar" class="fa-solid fa-bars"></i>
+        </nav>
+        <div class="main">
+            <img src="pictures/main.png" alt="">
+            <div class="mainText">
+                <h1>Health is Wealth...Sanjeevani</h1>
+                <p>Our hospital is fully equipped with state of art facilities________________________</p>
+                <button>Learn More</button>
+            </div>
+        </div>
+        <div id="service">
+            <div class="head">
+                <h1>Our Services</h1>
+            </div>
+            <div class="service">
+                <div class="serviceCard" onclick="goTopneumoniaPage()">
+                    <img src="pictures/chest.webp" alt="">
+                    <p>Chest and Respiratory</p>
+                </div>
+                <div class="serviceCard">
+                    <img src="pictures/laboratory.webp" alt="">
+                    <p>Laboratory</p>
+                </div>
+                <div class="serviceCard" onclick="goToBrainTumorPage()">
+                    <img src="pictures/physio.webp" alt="">
+                    <p>Brain tumor Detection</p>
+                </div>
+                <div class="serviceCard">
+                    <img src="pictures/nutrition.webp" alt="">
+                    <p>Nutrition</p>
+                </div>
+            </div>
+        </div>
+        <div id="doctors">
+            <div class="head">
+                <h1>Our Doctors</h1>
+            </div>
+            <div class="doctors">
+                <div class="team">
+                    <figure>
+                        <img src="pictures/d1.avif" alt="">
+                        <figcaption>Dr. John Smith</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="pictures/d2.avif" alt="">
+                        <figcaption>Dr. Jane Doe</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="pictures/d3.avif" alt="">
+                        <figcaption>Dr. Bob Johnson</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="pictures/d4.avif" alt="">
+                        <figcaption>Dr. Maria Rodriguez</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="pictures/d5.avif" alt="">
+                        <figcaption>Dr. David Lee</figcaption>  
+                    </figure>
+                    <br>
+                    <figure>
+                        <img src="pictures/d6.avif" alt="">
+                        <figcaption>Dr. Emily Chen</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="pictures/d7.avif" alt="">
+                        <figcaption>Dr. Michael Brown</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="pictures/d8.avif" alt="">
+                        <figcaption>Dr. Sophia Patel</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="pictures/d9.avif" alt="">
+                        <figcaption>Dr. Olivia Martin</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="pictures/d10.avif" alt="d9">
+                        <figcaption>Dr. Jackson Hall</figcaption>
+                    </figure>
+                </div>       
+            </div>
+        </div>
+        <div id="gallery">
+            <div class="head">
+                <h1>Gallery</h1>
+            </div>
+                <div class="slideshow">
+                    <div class="slide">
+                        <img src="pictures/g1.jpg" alt="">
+                    </div>
+                    <div class="slide">
+                        <img src="pictures/g2.jpg" alt="">
+                    </div>
+                    <div class="slide">
+                        <img src="pictures/g3.jpg" alt="">
+                    </div>
+                </div>
+        </div>
+        <div id="appointment">
+            <div class="head">
+                <h1>Book An Appointment</h1>
+            </div>
+            <div class="form">
+                <form id="appointmentForm">
+                    <input type="text" name="name" placeholder="Enter Name" required>
+                    <div class="error-message" id="nameError"></div> <!-- Name error message -->
+
+                    <input type="text" name="number" placeholder="Enter Number" required>
+                    <div class="error-message" id="numberError"></div> <!-- Number error message -->
+
+                    <input type="text" name="doctor" placeholder="Select Doctor" required list="doctorList">
+                    <datalist id="doctorList">
+                        <option value="Dr. John Smith">
+                        <option value="Dr. Jane Doe">
+                        <option value="Dr. Bob Johnson">
+                        <option value="Dr. Maria Rodriguez">
+                        <option value="Dr. David Lee">
+                        <option value="Dr. Emily Chen">
+                        <option value="Dr. Michael Brown">
+                        <option value="Dr. Sophia Patel">
+                        <option value="Dr. Olivia Martin">
+                        <option value="Dr. Jackson Hall">
+                    </datalist>
+                    <div class="error-message" id="doctorError"></div> <!-- Doctor error message -->
+
+                    <input type="date" name="date" required>
+                    <div class="error-message" id="dateError"></div> <!-- Date error message -->
+
+                    <button type="submit">Submit</button>
+                </form>    
+                <div id="successMessage" class="success-message"></div> <!-- Success message -->          
+            </div>
+            
+        </div>
+        
+        <div class="footer">
+            <div class="text">
+                <h2>About</h2>
+                <p>Lorem ipsum dolor sit amet conset <br>
+                    adipisicing elit. Atque sed, optio <br>
+                    eos maxime id obcaecati officia nes <br>
+                    aut illum fugiat cum porro?</p>
+            </div>
+            <div class="text">
+                <h2>Quick Links</h2>
+                <p>Facilities</p>
+                <p>Doctors</p>
+                <p>Diagnosis</p>
+            </div>
+            <div class="text">
+                <h2>Address</h2>
+                <p>Andhra Pradesh</p>
+                <p>548-849</p>
+            </div>
+            <div class="text">
+                <h2>Contact Us</h2>
+                <p>Mobile Number: +91 7845956247</p>
+                <p>E-mail: sanjeevanihospitals@support.in</p>
+            </div>
+        </div>
+    </div>
+    <script src="homepage.js"></script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: black;
+        }
+        .form {
+            width: 400px;
+            text-align: center;
+            margin: auto;
+            padding: 22px;
+            background-color: rgb(47, 47, 47);
+            border-radius: 10px;
+        }
+        .form input {
+            width: 90%;
+            font-size: 20px;
+            padding: 11px;
+            margin-top: 22px;
+            border-radius: 10px;
+        }
+        .form p {
+            color: white;
+        }
+        .form a {
+            color: blue;
+        }
+        .form button {
+            width: 140px;
+            height: 40px;
+            background-color: blue;
+            color: white;
+            font-size: 20px;
+            border: none;
+            margin-top: 22px;
+            border-radius: 10px;
+        }
+        .head {
+            text-align: center;
+            padding: 40px;
+            color: white;
+        }
+        .error {
+            color: red;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="Signup">
+        <div class="head">
+            <h1>Signup</h1>
+        </div>
+        <div class="form">
+            <input type="text" id="name" placeholder="Name">
+            <div id="nameError" class="error"></div>
+            <input type="password" id="password" placeholder="Password">
+            <div id="passwordError" class="error"></div>
+            <input type="number" id="mobile" placeholder="Mobile Number">
+            <div id="mobileError" class="error"></div>
+            <input type="email" id="email" placeholder="E-Mail id">
+            <div id="emailError" class="error"></div>
+            <input type="date" id="dob" placeholder="Date of Birth">
+            <div id="dobError" class="error"></div>
+            
+            <button onclick="validateForm()">Submit</button>
+        </div>
+    </div>
+
+    <script>
+        async function validateForm() {
+            const name = document.getElementById("name").value.trim();
+            const password = document.getElementById("password").value.trim();
+            const mobile = document.getElementById("mobile").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const dob = document.getElementById("dob").value;
+
+            const nameError = document.getElementById("nameError");
+            const passwordError = document.getElementById("passwordError");
+            const mobileError = document.getElementById("mobileError");
+            const emailError = document.getElementById("emailError");
+            const dobError = document.getElementById("dobError");
+
+            let isValid = true;
+
+            // Client-side validation
+            nameError.textContent = "";
+            passwordError.textContent = "";
+            mobileError.textContent = "";
+            emailError.textContent = "";
+            dobError.textContent = "";
+
+            if (!name) {
+                nameError.textContent = "Name is required";
+                isValid = false;
+            }
+
+            if (!password) {
+                passwordError.textContent = "Password is required";
+                isValid = false;
+            }
+
+            if (!mobile) {
+                mobileError.textContent = "Mobile number is required";
+                isValid = false;
+            }
+
+            if (!email) {
+                emailError.textContent = "Email is required";
+                isValid = false;
+            }
+
+            if (!dob) {
+                dobError.textContent = "Date of birth is required";
+                isValid = false;
+            }
+
+            if (isValid) {
+                try {
+                    const response = await fetch('/signup', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            name: name,
+                            password: password,
+                            mobile: mobile,
+                            email: email,
+                            dob: dob
+                        })
+                    });
+
+                    if (response.ok) {
+                        const result = await response.json();
+                        alert(result.message);
+                        if (result.redirect) {
+                            window.location.href = "/"; // Redirect to the homepage after signup
+                        }
+                    } else {
+                        const errorData = await response.json();
+                        alert(errorData.error || 'Signup failed. Please try again.');
+                    }
+                } catch (error) {
+                    alert('An error occurred. Please try again later.');
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,299 @@
+
+*{
+    margin: 0%;
+    padding: 0%;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: black;
+    
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: black;
+    color: white;
+    position:fixed;
+    top: 0%;
+    width: 100%;
+    height: 90px;
+}
+ul{
+    display: flex;
+}
+ul li{
+    list-style: none;
+}
+ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 22px;
+    margin-inline: 22px;
+}
+.logo{
+    font-size: 30px;
+}
+.main{
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+    background-color: black;
+    padding: 33px;
+}
+.main img{
+    width: 710px;
+}
+.mainText{
+    margin-top: 44px;
+    color: white;
+}
+.mainText h1{
+    font-size: 66px;
+}
+.mainText p{
+    margin-top: 22px;
+}
+.mainText button{
+    margin-top: 22px;
+    width: 140px;
+    height: 40px;
+    background-color: blue;
+    color: white;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+}
+.head{
+    text-align: center;
+    padding: 44px;
+    color: white;
+}
+.service{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.service .serviceCard{
+    width: 200px;
+    padding: 22px;
+    background-color: rgb(67,67,67);
+    text-align: center;
+    margin-inline: 22px;
+    cursor: pointer;
+    margin-top: 22px;
+    color: white;
+    border-radius: 10px;
+}
+.service .serviceCard img{
+    padding: 15px;
+    width: 100px;
+}
+
+.serviceCard:hover{
+    background-color: rgb(216, 205, 205);
+}
+.doctors{
+    width: 100%;
+    height: 800px;
+    margin: auto;
+    overflow: hidden;
+    background-color: rgb(67,67,67);
+    border-radius: 10px;
+}
+.team{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: auto;
+    flex-wrap: wrap;
+}
+.team figure{
+    margin-inline: 20px;
+    margin-bottom: 20px;
+}
+.team img{
+    width: 240px;
+    height: 300px;
+    border-radius: 10px;
+}
+.team figcaption{
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+.slideshow {    
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgb(67,67,67);
+    border-radius: 10px;
+}
+
+.slide {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    padding: 20px;
+}
+
+.slide.active {
+    display: block;
+}
+.slideshow .slide img{
+    width: 90%;
+    height: 600px;
+    border-radius: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+.form{
+    width: 400px;
+    text-align: center;
+    margin: auto;
+    padding: 22px;
+    background-color: rgb(67,67,67);
+    border-radius: 10px;
+}
+.form input{
+    width: 90%;
+    font-size: 20px;
+    padding: 11px;
+    margin-top: 22px;
+    border-radius: 10px;
+}
+.form .error-message{
+    color: white;
+    font-size: 14px;
+    margin-top: 5px;
+    padding: 5px;
+}
+.form .success-message {
+    color: white;
+    font-size: 16px;
+    margin-top: 15px;
+    font-weight: bold;
+    text-align: center;
+    display: block;
+}
+.form button{
+    width: 140px;
+    height: 40px;
+    background-color: blue;
+    color: white;
+    font-size: 20px;
+    border: none;
+    margin-top: 22px;
+    border-radius: 10px;
+}
+.footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 66px;
+    margin-top: 66px;
+    background-color: rgb(82, 82, 82);
+    color: white;
+}
+.footer p{
+    margin-top: 22px;
+}
+
+.detailCard{
+    width: 400px;
+    padding: 42px;
+    background-color: rgb(67,67,67);
+    text-align: center;
+    position: fixed;
+    top: 5%;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, 40%);
+    color: white;
+    border-radius: 10px;
+}
+.detailCard i{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    font-size: 22px;
+    background-color: white;
+    padding: 11px;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+}
+
+#bar{
+    display: none;
+    font-size: 27px;
+}
+
+@media screen and (max-width:1100px){
+    .main{
+        display: block;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width:850px){
+    .doctors{
+        width: 90%;
+    }
+    .team img{
+        width: 200px;
+        margin-inline: 11px;
+    }
+}
+
+@media screen and (max-width:760px){
+    
+    .team img{
+        width: 150px;
+        margin-inline: 11px;
+    }
+    .main img{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width:550px){
+    
+    .team img{
+        width: 30%;
+        height: 120px;
+        margin-inline: 4px;
+    }
+    .form{
+        width: 76%;
+    }
+    .detailCard {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width:920px){
+    ul{
+        display: none;
+    }
+    #bar{
+        display: block;
+    }
+}
+    
+
+@media screen and (max-width:620px){
+    .main h1{
+        font-size: 33px;
+    }
+}
